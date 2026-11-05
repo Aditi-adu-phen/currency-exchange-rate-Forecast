@@ -1,79 +1,190 @@
 # Project Report
-## Currency Exchange Rate Forecast Using Machine Learning
+# Currency Exchange Rate Forecast Using Machine Learning
 
-### 1. Introduction
+## 1. Introduction
 
-Foreign exchange rates represent the value of one currency in relation to another. The INR-USD exchange rate indicates the value of the Indian Rupee relative to the United States Dollar. Exchange rate movements are influenced by economic conditions, financial markets, international trade, and global events.
+Currency exchange rates are important in international trade, financial transactions, investments, and economic activities. Exchange rates fluctuate due to several factors, including market demand, inflation, interest rates, and global economic conditions.
 
-Machine learning techniques can be applied to historical exchange rate data to identify patterns and estimate subsequent exchange rate values.
+Machine learning techniques can be applied to historical financial data to identify patterns and estimate numerical values.
 
-### 2. Abstract
+This project explores the use of Decision Tree Regression for analyzing historical USD-INR exchange rate data and estimating closing exchange rates.
 
-This project explores the use of machine learning for INR-USD exchange rate forecasting. Historical exchange rate data is analyzed using Python, and a Decision Tree Regression algorithm is used to estimate closing exchange rate values. Data preprocessing, feature engineering, model training, evaluation, and visualization form the main stages of the implementation.
+## 2. Abstract
 
-### 3. Problem Statement
+The objective of this project is to develop a machine learning-based approach for analyzing historical currency exchange rate data.
 
-Exchange rates fluctuate over time, making it challenging to estimate future currency values. The project addresses this challenge by applying a regression-based machine learning approach to historical exchange rate observations.
+The implementation uses Python to collect and process historical USD-INR data. Historical observations are transformed into time-based features, which are used to train a Decision Tree Regression model.
 
-### 4. Objectives
+The model generates closing exchange rate estimates and is evaluated using regression metrics such as Mean Absolute Error, Mean Squared Error, Root Mean Squared Error, and R-squared.
 
-- Study historical INR-USD exchange rate movements.
-- Analyze the relationships among market attributes.
-- Prepare historical data for machine learning.
-- Apply Decision Tree Regression.
-- Estimate subsequent closing exchange rate values.
-- Evaluate model performance.
+The project demonstrates the application of supervised machine learning and data analysis techniques to historical financial data.
 
-### 5. Dataset
+## 3. Problem Statement
 
-The original project used a dataset named INR.csv containing Date, Open, High, Low, Close, Adjusted Close, and Volume fields.
+Currency exchange rates change continuously due to economic conditions and market-related factors. Understanding historical movements and estimating future values can be challenging.
 
-The recreated implementation obtains historical USD-INR observations from an external financial data source and stores the required fields in a CSV file.
+This project aims to explore how historical exchange rate observations can be processed and used to train a machine learning model for estimating closing exchange rate values.
 
-### 6. Tools and Technologies
+## 4. Objectives
 
-- Python
-- NumPy
-- Pandas
-- Matplotlib
-- Seaborn
-- Scikit-learn
+- Collect historical USD-INR exchange rate data.
+- Perform data preprocessing and analysis.
+- Create historical features from previous trading observations.
+- Implement a Decision Tree Regression model.
+- Train the model using historical data.
+- Generate closing exchange rate estimates.
+- Evaluate model performance using regression metrics.
+- Visualize historical and predicted exchange rate values.
 
-### 7. Algorithm
+## 5. Dataset Description
 
-Decision Tree Regression is a supervised learning technique that predicts continuous numerical values by learning decision rules from input features.
+The implementation uses historical USD-INR exchange rate observations.
 
-It is used to estimate exchange rate closing values based on historical market observations.
+The dataset can include the following attributes:
 
-### 8. Methodology
+| Attribute | Description |
+|---|---|
+| Date | Date of the observation |
+| Open | Opening exchange rate |
+| High | Highest exchange rate |
+| Low | Lowest exchange rate |
+| Close | Closing exchange rate |
+| Adj Close | Adjusted closing value, if available |
+| Volume | Trading volume, if available |
 
-1. Collect historical exchange rate data.
-2. Load and inspect the dataset.
-3. Clean incomplete records.
-4. Explore exchange rate trends.
-5. Prepare historical input features.
-6. Divide observations into training and testing sets in chronological order.
-7. Train a Decision Tree Regression model.
-8. Generate predictions.
-9. Evaluate predictions using regression metrics.
-10. Visualize the results.
+The original college project used a dataset named `INR.csv`. The recreated implementation downloads historical data through the `yfinance` library and stores it in `dataset/usd_inr.csv`.
 
-### 9. Evaluation
+## 6. Technologies and Tools
 
-The implementation calculates Mean Absolute Error, Mean Squared Error, Root Mean Squared Error, and R-squared. Actual metric values are produced when the model is executed.
+| Technology | Purpose |
+|---|---|
+| Python | Programming language |
+| Pandas | Data processing and manipulation |
+| NumPy | Numerical operations |
+| Matplotlib | Data visualization |
+| Scikit-learn | Machine learning and model evaluation |
+| yfinance | Historical market data retrieval |
+| Joblib | Saving the trained model |
 
-### 10. Expected Outcome
+## 7. Algorithm
 
-The implementation is designed to provide historical exchange rate visualizations, actual-versus-predicted comparisons, evaluation metrics, and an estimate for the next available trading observation.
+### Decision Tree Regression
 
-### 11. Conclusion
+Decision Tree Regression is a supervised learning algorithm used for predicting continuous numerical values.
 
-The project demonstrates how machine learning regression techniques can be used to study historical currency exchange rate data and estimate subsequent exchange rate values. It provides practical experience in Python programming, data analysis, feature engineering, regression modelling, and visualization.
+The algorithm learns decision rules by splitting the training data based on feature conditions. These rules are used to estimate values for unseen observations.
 
-### 12. Future Scope
+In this project, the Decision Tree Regressor uses historical exchange rate features to estimate the closing exchange rate.
 
-The project can be extended by comparing multiple regression algorithms, incorporating economic indicators, applying advanced time-series forecasting techniques, and developing a web-based interface for displaying forecasts.
+## 8. Methodology
 
-### 13. Disclaimer
+### 8.1 Data Collection
 
-This project is for educational purposes only. The generated estimates are not guaranteed exchange rates and should not be used as financial advice.
+Historical USD-INR exchange rate data is downloaded using the `yfinance` Python library.
+
+### 8.2 Data Preprocessing
+
+The downloaded dataset is loaded using Pandas, sorted chronologically, and prepared for feature engineering.
+
+### 8.3 Feature Engineering
+
+The implementation creates features from previous trading observations, including previous Open, High, Low, and Close values, earlier closing values, and a five-day moving average.
+
+The current observation's Close value is used as the prediction target.
+
+### 8.4 Train-Test Split
+
+The prepared dataset is divided chronologically:
+
+- 80% of the observations for training.
+- 20% of the observations for testing.
+
+This preserves the time order of the observations.
+
+### 8.5 Model Training
+
+A Decision Tree Regressor is trained using the historical features and corresponding closing exchange rate values.
+
+### 8.6 Prediction
+
+The trained model generates closing exchange rate estimates for the test dataset.
+
+### 8.7 Model Evaluation
+
+The model calculates the following evaluation metrics:
+
+- Mean Absolute Error (MAE)
+- Mean Squared Error (MSE)
+- Root Mean Squared Error (RMSE)
+- R-squared (R²)
+
+### 8.8 Visualization
+
+Matplotlib is used to generate visualizations of historical exchange rate movements and actual versus predicted closing values.
+
+## 9. Model Evaluation Metrics
+
+| Metric | Explanation |
+|---|---|
+| MAE | Average absolute difference between actual and predicted values. |
+| MSE | Average squared difference between actual and predicted values. |
+| RMSE | Square root of MSE, expressed in the target variable's unit. |
+| R² Score | Measures how well the model explains the variation in the target values. |
+
+The actual metric values are produced by executing the implementation. No performance figures are assumed or reported without execution.
+
+## 10. Expected Results
+
+The implementation is designed to produce:
+
+- Historical exchange rate visualization.
+- Actual versus predicted exchange rate visualization.
+- Model evaluation metrics.
+- Predicted closing exchange rate values.
+- A saved Decision Tree Regression model.
+- A next-observation exchange rate estimate.
+
+These outputs are generated by the Python scripts when executed successfully.
+
+## 11. Applications
+
+The project demonstrates concepts that are relevant to:
+
+- Historical financial data analysis.
+- Currency exchange rate trend analysis.
+- Machine learning-based regression.
+- Time-based feature engineering.
+- Financial data visualization.
+
+The estimates are for educational demonstration and are not intended for financial decision-making.
+
+## 12. Limitations
+
+- Exchange rates are affected by many external economic and market factors.
+- The implementation uses a limited set of historical features.
+- Decision Tree Regression may not capture every time-series pattern.
+- Model performance depends on the dataset and selected parameters.
+- Predictions are estimates and are not guaranteed to match actual market movements.
+
+## 13. Future Enhancements
+
+- Compare Decision Tree Regression with Random Forest and other algorithms.
+- Explore advanced time-series forecasting methods.
+- Include additional economic indicators.
+- Extend the project to multiple currency pairs.
+- Perform hyperparameter tuning.
+- Develop a web-based interface for displaying predictions.
+
+## 14. Conclusion
+
+This project demonstrates how machine learning can be applied to historical currency exchange rate data.
+
+By using Decision Tree Regression, historical exchange rate features can be used to estimate closing values. The implementation provides practical exposure to data collection, preprocessing, feature engineering, model training, evaluation, and visualization using Python.
+
+## 15. Author
+
+**Aditi Balakrishnan**
+
+## 16. Recreation Note
+
+This report describes a recreated GitHub implementation based on the original college project topic and previously documented project details. The original college-project source files and verified original results were not available for direct reproduction. Therefore, the code and outputs in this repository should be understood as a recreated implementation rather than the original submission.
