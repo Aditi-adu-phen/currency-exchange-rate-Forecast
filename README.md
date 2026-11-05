@@ -4,7 +4,7 @@
 
 Currency exchange rates play an important role in international trade, financial transactions, investments, and global economic activities. Exchange rates fluctuate due to several economic and market-related factors, making their future movements difficult to estimate.
 
-This project focuses on analyzing historical exchange rate data between the Indian Rupee (INR) and the United States Dollar (USD) using machine learning techniques. A Decision Tree Regression algorithm is used to learn patterns from historical market data and estimate exchange rate values.
+This project focuses on analyzing historical exchange rate data between the United States Dollar (USD) and the Indian Rupees (INR) using machine learning techniques. A Decision Tree Regression algorithm is used to learn patterns from historical market data and estimate exchange rate values.
 
 The project uses Python libraries for data processing, analysis, visualization, model development, and prediction.
 
@@ -24,7 +24,7 @@ Currency exchange rates are constantly changing due to economic conditions, mark
 
 Manually estimating exchange rate movements can be difficult because of the large amount of historical data and changing market conditions.
 
-This project aims to analyze historical INR-USD exchange rate data and develop a machine learning model that uses relevant market attributes to estimate closing exchange rate values.
+This project aims to analyze historical (USD-INR) exchange rate data and develop a machine learning model that uses relevant market attributes to estimate closing exchange rate values.
 
 ## 4. Objectives
 
