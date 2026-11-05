@@ -153,16 +153,11 @@ The project provides practical exposure to data preprocessing, exploratory data 
 ## 13. Project Structure
 
 ```text
-currency-exchange-rate-forecast/
-│
-├── dataset/
-├── src/
-│   ├── fetch_data.py
-│   └── train_model.py
-├── outputs/
-├── images/
+currency-exchange-rate-Forecast/
 ├── README.md
 ├── PROJECT_REPORT.md
+├── src/
+├── USD-INR.csv
 ├── requirements.txt
 └── .gitignore
 ```
