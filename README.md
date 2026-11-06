@@ -150,9 +150,6 @@ The project provides practical exposure to data preprocessing, exploratory data 
 - Improve model performance through hyperparameter tuning.
 - Develop a simple web application to display exchange rate estimates.
 
-## 13. Project Structure
-
-```text
 currency-exchange-rate-Forecast/
 ├── README.md
 ├── PROJECT_REPORT.md
@@ -160,7 +157,6 @@ currency-exchange-rate-Forecast/
 ├── USD-INR.csv
 ├── requirements.txt
 └── .gitignore
-```
 
 ## 14. How to Run
 
